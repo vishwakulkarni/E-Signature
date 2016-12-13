@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Outlook signature creator</title>
+
+        <!-- CSS -->
+        <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:400,100,300,500">
+		<link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+        <link rel="stylesheet" href="assets/font-awesome/css/font-awesome.min.css">
+		<link rel="stylesheet" href="assets/css/form-elements.css">
+        <link rel="stylesheet" href="assets/css/style.css">
+		<link rel="stylesheet" href="assets/css/style.min.css">
+		<link rel="stylesheet" href="assets/img">
+		
+
+        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+
+        <!-- Favicon and touch icons -->
+        <link rel="shortcut icon" href="assets/ico/favicon.png">
+        <link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/ico/apple-touch-icon-144-precomposed.png">
+        <link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/ico/apple-touch-icon-114-precomposed.png">
+        <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/ico/apple-touch-icon-72-precomposed.png">
+        <link rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-57-precomposed.png">
+		
+		<link href="assets/css/thumbs2.css" rel="stylesheet" />
+		<link href="assets/css/thumbnail-slider.css" rel="stylesheet" type="text/css" />
+		<script src="assets/js/thumbnail-slider.js" type="text/javascript"></script>
+   
+
+    </head>
+	
+
+	<style>
+#snackbar {
+    visibility: hidden;
+    min-width: 250px;
+    margin-left: -125px;
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    border-radius: 2px;
+    padding: 16px;
+    position: fixed;
+    z-index: 1;
+    left: 50%;
+    bottom: 30px;
+    font-size: 17px;
+}
+
+#snackbar.show {
+    visibility: visible;
+    -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+    animation: fadein 0.5s, fadeout 0.5s 2.5s;
+}
+
+@-webkit-keyframes fadein {
+    from {bottom: 0; opacity: 0;}
+    to {bottom: 30px; opacity: 1;}
+}
+
+@keyframes fadein {
+    from {bottom: 0; opacity: 0;}
+    to {bottom: 30px; opacity: 1;}
+}
+
+@-webkit-keyframes fadeout {
+    from {bottom: 30px; opacity: 1;}
+    to {bottom: 0; opacity: 0;}
+}
+
+@keyframes fadeout {
+    from {bottom: 30px; opacity: 1;}
+    to {bottom: 0; opacity: 0;}
+}
+</style>
+
+	
+    <body>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+<script>
+$(function () {
+  //for name
+  var $text = $('#nos-name');
+  var $input = $('#form-username');
+  $input.on('keydown', function () {
+    setTimeout(function () {
+	  if($input.val().length===0)
+	{
+		$text.html("Vishwanath Kulkarni");
+	}
+	else{
+		  $text.html($input.val());
+	}
+    }, 0);
+  });
+  });
+  
+  //for company
+  $(function () {
+  var $text = $('#nos-company');
+  var $input = $('#form-company');
+  $input.on('keydown', function () {
+    setTimeout(function () {
+	  $text.html($input.val());
+    }, 0);
+  });
+  });
+  
+  //for title
+  $(function () {
+  var $text = $('#nos-title');
+  var $input = $('#form-title');
+  $input.on('keydown', function () {
+    setTimeout(function () {
+	if($input.val().length===0)
+	{
+		$text.addClass('block-hiden');
+	}
+	else{
+	  $text.html($input.val());
+	  $text.attr('class','nos-title-wrapper');
+	
+	
+	}
+	}, 0);
+  });
+  });
+  
+  //for department
+  $(function () {
+  var $text = $('#nos-department');
+  var $input = $('#form-department');
+  $input.on('keydown', function () {
+    setTimeout(function () {
+	  $text.html($input.val());
+    }, 0);
+  });
+  });
+  
+  //for company phone
+  $(function () {
+  var $text = $('#nos-phone1');
+  var $input = $('#form-companyphone');
+  $input.on('keydown', function () {
+    setTimeout(function () {
+	  $text.html($input.val());
+    }, 0);
+  });
+  });
+  
+  //for mobile
+  $(function () {
+  var $text = $('#nos-mobile1');
+  var $input = $('#form-mobile');
+  $input.on('keydown', function () {
+    setTimeout(function () {
+	  $text.html($input.val());
+    }, 0);
+  });
+  });
+  
+  //for website
+  $(function () {
+  var $text = $('#nos-website');
+  var $input = $('#form-website');
+  $input.on('keydown', function () {
+    setTimeout(function () {
+	  $text.html($input.val());
+	  var hreff = "http://www."+$input.val();
+	  $text.attr('href',hreff);
+    }, 0);
+  });
+  });
+  
+  //for email
+  $(function () {
+  var $text = $('#nos-email');
+  var $input = $('#form-email');
+  $input.on('keydown', function () {
+    setTimeout(function () {
+		var hreff = "mailto:"+$input.val();
+	  $text.html($input.val());
+    }, 0);
+  });
+  });
+  
+   //for skype
+  $(function () {
+  var $text = $('#nos-skype');
+  var $input = $('#form-skype');
+  $input.on('keydown', function () {
+    setTimeout(function () {
+	  $text.html($input.val());
+    }, 0);
+  });
+  });
+  
+  //for facebook
+  $(function () {
+  var $text = $('#nos-facebook');
+  var $input = $('#form-facebook');
+  $input.on('keydown', function () {
+    setTimeout(function () {
+	  $text.attr('href',$input.val());
+    }, 0);
+  });
+  });
+  
+  //for twitter
+  $(function () {
+  var $text = $('#nos-twitter');
+  var $input = $('#form-twitter');
+  $input.on('keydown', function () {
+    setTimeout(function () {
+	   $text.attr('href',$input.val());
+    }, 0);
+  });
+  });
+  
+  //for linkedin
+  $(function () {
+  var $text = $('#nos-linkedin');
+  var $input = $('#form-linkedin');
+  $input.on('keydown', function () {
+    setTimeout(function () {
+	   $text.attr('href',$input.val());
+    }, 0);
+  });
+  });
+  
+  //for Instagram
+  $(function () {
+  var $text = $('#nos-instagram');
+  var $input = $('#form-instagram');
+  $input.on('keydown', function () {
+    setTimeout(function () {
+	   $text.attr('href',$input.val());
+    }, 0);
+  });
+  });
+  
+  //for address
+  $(function () {
+  var $text = $('#nos-address');
+  var $input = $('#form-address');
+  $input.on('keydown', function () {
+    setTimeout(function () {
+	  $text.html($input.val());
+    }, 0);
+  });
+  });
+  
+  function SelectText(element) {
+    var doc = document
+        , text = doc.getElementById(element)
+        , range, selection
+    ;    
+    if (doc.body.createTextRange) {
+        range = document.body.createTextRange();
+        range.moveToElementText(text);
+        range.select();
+    } else if (window.getSelection) {
+        selection = window.getSelection();        
+        range = document.createRange();
+        range.selectNodeContents(text);
+        selection.removeAllRanges();
+        selection.addRange(range);
+    }
+}
+  
+  
+document.onclick = function(e) {    
+    if (e.target.id === 'select') {
+        SelectText('signature-preview');
+    }
+};
+
+
+
+
+
+	</script>
+	
+	<script>
+function myFunction() {
+    var x = document.getElementById("snackbar");
+    x.className = "show";
+    setTimeout(function(){ x.className = x.className.replace("show", ""); }, 2000);
+}
+
+function deSelect(){
+var sel = window.getSelection ? window.getSelection() : document.selection;
+if (sel) {
+    if (sel.removeAllRanges) {
+        sel.removeAllRanges();
+    } else if (sel.empty) {
+        sel.empty();
+    }
+}
+}
+</script>
+	
+        <!-- Top content -->
+        <div class="top-content">
+        	
+            <div class="inner-bg">
+               <!-- <div class="container">-->
+			   <div>
+                	
+                   <!-- <div class="row">
+                        <div class="col-sm-8 col-sm-offset-2 text">
+                            <h1><strong>E-Signature</strong> made for You</h1>
+                            <div class="description">
+                            	<p>
+	                            	This is a free signature creation webisite.
+                            	</p>
+                            </div>
+                        </div>
+                    </div>
+                    -->
+                    <div class="row">
+                        <div class="col-sm-5">
+                        	
+                        	<div class="form-box-data">
+	                        	<div class="form-top">
+	                        		<div class="form-top-left">
+	                        			<h3>Signature Details</h3>
+	                            		<p>Enter your detais:</p>
+	                        		</div>
+	                            </div>
+	                            <div class="form-bottom" id="form-bottom">
+								    <form role="form" action="" method="post" class="login-form">
+									Name:
+				                    	<div class="form-group">
+				                    		<label class="sr-only" for="form-username">Username</label>
+				                        	<input type="text" name="form-username" placeholder="Vishwanath Kulkarni" class="form-username form-control" id="form-username">
+				                        </div>
+									Company:
+				                        <div class="form-group">
+				                        	<label class="sr-only" for="form-company">company</label>
+				                        	<input type="text" name="form-company" placeholder="SAP Labs private Ltd." class="form-company form-control" id="form-company">
+				                        </div>
+									Title:
+										<div class="form-group">
+				                    		<label class="sr-only" for="form-title">title</label>
+				                        	<input type="text" name="form-title" placeholder="Developer" class="form-title form-control" id="form-title">
+				                        </div>
+									Department:
+										<div class="form-group">
+				                    		<label class="sr-only" for="form-department">department</label>
+				                        	<input type="text" name="form-department" placeholder="HCP In Team" class="form-department form-control" id="form-department">
+				                        </div>
+									Company phone:
+										<div class="form-group">
+				                    		<label class="sr-only" for="form-companyphone">companyphone</label>
+				                        	<input type="text" name="form-companyphone" placeholder="080-1111" class="form-companyphone form-control" id="form-companyphone">
+				                        </div>
+									Mobile:
+										<div class="form-group">
+				                    		<label class="sr-only" for="form-mobile">mobile</label>
+				                        	<input type="text" name="form-mobile" placeholder="(+91)8867730370" class="form-mobile form-control" id="form-mobile">
+				                        </div>
+									website:
+										<div class="form-group">
+				                    		<label class="sr-only" for="form-website">website</label>
+				                        	<input type="text" name="form-website" placeholder="www.visy.com" class="form-website form-control" id="form-website">
+				                        </div>
+									Email:
+										<div class="form-group">
+				                    		<label class="sr-only" for="form-email">email</label>
+				                        	<input type="text" name="form-email" placeholder="vishwa.kulkarni@gmail.com" class="form-email form-control" id="form-email">
+				                        </div>
+									Skype:
+										<div class="form-group">
+				                    		<label class="sr-only" for="form-skype">skype</label>
+				                        	<input type="text" name="form-skype" placeholder="vishykulk" class="form-skype form-control" id="form-skype">
+				                        </div>
+									facebook:
+										<div class="form-group">
+				                    		<label class="sr-only" for="form-facebook">facebook</label>
+				                        	<input type="text" name="form-facebook" placeholder="facebook" class="form-facebook form-control" id="form-facebook">
+				                        </div>
+									Twitter:
+										<div class="form-group">
+				                    		<label class="sr-only" for="form-twitter">twitter</label>
+				                        	<input type="text" name="form-twitter" placeholder="twitter" class="form-twitter form-control" id="form-twitter">
+				                        </div>
+									Linkedin:
+										<div class="form-group">
+				                    		<label class="sr-only" for="form-linkedin">linkedin</label>
+				                        	<input type="text" name="form-linkedin" placeholder="linkedin" class="form-linkedin form-control" id="form-linkedin">
+				                        </div>
+									Instagram:
+										<div class="form-group">
+				                    		<label class="sr-only" for="form-instagram">instagram</label>
+				                        	<input type="text" name="form-instagram" placeholder="instagram" class="form-instagram form-control" id="form-instagram">
+				                        </div>
+										
+								
+									address:
+										<div class="form-group">
+				                    		<label class="sr-only" for="form-adress">adress</label>
+											<textarea name="form-address" placeholder="your company adress" 
+				                        				class="form-about-yourself form-control" id="form-address" maxlength="21"></textarea>
+											</div>
+																		
+				                        <button type="submit" class="btn">Create Signature</button>
+				                    </form>
+			                    </div>
+		                    </div>
+		                
+	                        
+                        </div>
+                        
+                        <div class="col-sm-1 middle-border"></div>
+                        <div class="col-sm-1"></div>
+                        	
+                        <div class="col-sm-5">
+                        	
+                        	<div class="form-box form-fixed" >
+                        		<div class="form-top">
+	                        		<div class="form-top-left">
+	                        			<h3>Your Signature</h3>
+	                            		<p></p>
+	                        		</div>
+	                            </div>
+	                            <div class="form-bottom" width=300px; >
+				                  <div id="signature-preview-wrapper">
+									<div id="signature-preview" class="reset-this">
+										<table style="font-family:Arial;font-size:80%;"><tbody>
+											<tr>
+												<td valign="top" style="padding:0 8px 0 0;" class="nos-photo-wrapper">
+													<a id="nos-photo-link" href="https://vishyblog.wordpress.com" target="_blank">
+														<img class="img" src="assets/img/Geek.png">
+													</a>
+												</td>
+												<td valign="top" style="border-left:3px solid;border-color:#f8941c;padding:0 0 0 8px;" class="border-color">
+													<div style="font-size:1.2em;" class="nos-name-wrapper" id="nos-name">Vishwanath Kulkarni</div>
+														<span class="nos-title-wrapper"><span style="font-size:0.9em;font-weight:bold;" id="nos-title">
+															Web Developer
+																</span>
+														</span>
+																<span style="font-size:0.9em;" class="nos-company-wrapper" id="nos-company" float="left">&nbsp;&nbsp; SAP Labs Private Ltd.</span>
+																<div style="font-size:0.9em;" class="nos-department-wrapper" id="nos-department">Hana Cloud Platform Team</div>
+																<div style="line-height:1em;font-size:1em;">&nbsp;</div>
+																<div>
+																	<span class="nos-phone1-wrapper">
+																		<span style="font-size:0.9em;color:#ababab;">p:&nbsp;</span>
+																		<span style="font-size:0.9em;" id="nos-phone1">080-1111</span>&nbsp;
+																	</span>
+																	<span class="nos-mobile1-wrapper">
+																		<span style="font-size:0.9em;color:#ababab;">m:&nbsp;</span>
+																		<span style="font-size:0.9em;" id="nos-mobile1">(+91)8867730370</span>&nbsp;
+																	</span>
+																	<span class="nos-address-wrapper"><span style="font-size:0.9em;color:#ababab;">a:&nbsp;</span>
+																	<span style="font-size:0.9em;" id="nos-address">138th EPIP,KA, IN</span>&nbsp;
+																	</span>
+																</div>
+																<div>
+																	<span class="nos-website-wrapper">
+																		<span style="font-size:0.9em;color:#ababab;">w:&nbsp;</span>
+																		<span>
+																			<a href="https://www.vishyblog.com" target="_blank" style="color:#000000;text-decoration:none;font-size:0.9em;" id="nos-website">www.vishy.com</a>
+																		</span>&nbsp;
+																	</span>
+																	<span class="nos-email-wrapper">
+																		<span style="font-size:0.9em;color:#ababab;">e:&nbsp;</span>
+																			<span>
+																				<a href="mailto:vishwa.kulkarni@gmail.com" target="_blank" style="font-size:0.9em;color:#000000;text-decoration:none;" id="nos-email">vishwa.kulkar@gmail.com</a>
+																			</span>&nbsp;
+																	</span>
+																	<span class="nos-skype-wrapper">
+																		<span style="font-size:0.9em;color:#ababab;">s:</span>
+																		<span style="font-size:0.9em;" id="nos-skype">vishykulk</span>&nbsp;
+																	</span>
+																</div>
+																<div style="line-height:1em;font-size:1em;">&nbsp;</div>
+																<div class="nos-social-caption-wrapper">
+																	<div style="font-size:0.9em;" id="nos-social-caption">Follow me</div>
+																</div>
+																<div style="line-height:0.4em;font-size:0.4em;">&nbsp;</div>
+																<div class="nos-social-links-wrapper" id="nos-social-links">
+																	<span class="nos-editor-socicons nos-facebook-wrapper ">
+																		<a href="https://facebook.com/vishy.kulkarni" id="nos-facebook" target="_blank">
+																			<img style="border:2px solid #fff" src="assets/ico/facebook.png">
+																		</a>
+																	</span>
+																	<span class="nos-editor-socicons nos-twitter-wrapper ">
+																		<a href="https://twitter.com/vishykulk" id="nos-twitter" target="_blank">
+																			<img style="border:2px solid #fff" src="assets/ico/twitter.png">
+																		</a>
+																	</span>
+																	<span class="nos-editor-socicons nos-linkedin-wrapper ">
+																		<a href="https://linkedin.com/vishwakulkarni" id="nos-linkedin" target="_blank">
+																			<img style="border:2px solid #fff" src="assets/ico/linkedin.png">
+																		</a>
+																	</span>
+																	<span class="nos-editor-socicons nos-instagram-wrapper ">
+																		<a href="https://instagram.com/vishy_kulk" id="nos-instagram" target="_blank">
+																			<img style="border:2px solid #fff" src="assets/ico/instagram.png">
+																		</a>
+																	</span>
+																</div>
+												</td>
+											</tr>
+										</tbody>
+										</table>
+										
+										<div class="nos-banner-wrapper block-hiden" style="margin-top:10px;"><a id="nos-banner-link" href="https://newoldstamp.com" target="_blank"><img src="https://newoldstamp.com/f/free_banner.png"></a></div><div class="nos-disclaimer-wrapper block-hiden" style="margin-top:10px;"></div></div></div>
+			                    <button class="btn" id="select" onclick="myFunction()">Select</button>
+								<div id="snackbar">press control+C to copy signature</div>
+								<button class="btn" onclick="deSelect()" id="clear" >Clear</button>
+								<!--<div class="signature-copy-wrapper" style="padding-top:40px;">
+ <div class="signature-copy-html reset-this"><table><tbody><tr><td valign="top" style="padding:0 8px 0 0;"><img src="https://img.newoldstamp.com/f/000/005/u979.png?58319d8ab076b" width="100" height="100"></td><td valign="top" style="font-size:80%;font-family:Arial;border-left:3px solid;border-color:#f8941c;padding:0 0 0 8px;"><div style="font-size:1.2em;">vishwanath Kulkarni</div><span><span style="font-size:0.9em;font-weight:bold;">Developer</span>&nbsp;&nbsp;</span><span style="font-size:0.9em;">SAP Labs private Ltd</span><div style="font-size:0.9em;">Hana cloud Platform In</div><div style="line-height:1em;font-size:1em;">&nbsp;</div><div><span><span style="font-size:0.9em;color:#ababab;">p:&nbsp;</span><span style="font-size:0.9em;">080-1111</span>&nbsp;</span><span><span style="font-size:0.9em;color:#ababab;">m:&nbsp;</span><span style="font-size:0.9em;">(+91)-8867730370</span>&nbsp;</span><span><span style="font-size:0.9em;color:#ababab;">a:&nbsp;</span><span style="font-size:0.9em;">138# EPIP zone whitefield.</span>&nbsp;</span></div><div><span><span style="font-size:0.9em;color:#ababab;">w:&nbsp;</span><span><a href="https://www,vishy.com" target="_blank" style="color:#000000;text-decoration:none;font-size:0.9em;">www,vishy.com</a></span>&nbsp;</span><span><span style="font-size:0.9em;color:#ababab;">e:&nbsp;</span><span><a href="mailto:vishwa.kulkarni@gmail.com" target="_blank" style="font-size:0.9em;color:#000000;text-decoration:none;">vishwa.kulkarni@gmail.com</a></span>&nbsp;</span><span><span style="font-size:0.9em;color:#ababab;">s:&nbsp;</span><span style="font-size:0.9em;">vishwakulkarni</span>&nbsp;</span></div><div style="line-height:1em;font-size:1em;">&nbsp;</div></td></tr></tbody></table><div style="line-height:10px;font-size:10px;">&nbsp;</div><div><a target="_blank" href="https://newoldstamp.com/editor/?utm_source=banner"><img src="https://img.newoldstamp.com/f/free_banner.png?58319d8ab076b" width="263" height="16"></a></div></div>
+</div>-->
+								</div>
+								
+                        	</div>
+                        	
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+            
+        </div>
+
+        <!-- Footer -->
+        <footer>
+        	<div class="container">
+        		<div class="row">
+        			
+        			<div class="col-sm-8 col-sm-offset-2">
+        				<div class="footer-border"></div>
+        				<p>Made by <a href="http://www.facebook.com/vishy.kulkarni" target="_blank"><b>Vishwanath Kulkarni</b></a> with love in <strong>INDIA</strong></a> 
+        					 <i class="fa fa-smile-o"></i></p>
+        			</div>
+        			
+        		</div>
+        	</div>
+        </footer>
+
+        <!-- Javascript -->
+        <script src="assets/js/jquery-1.11.1.min.js"></script>
+        <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+        <script src="assets/js/jquery.backstretch.min.js"></script>
+        <script src="assets/js/scripts.js"></script>
+        
+        <!--[if lt IE 10]>
+            <script src="assets/js/placeholder.js"></script>
+        <![endif]-->
+
+    </body>
+
+</html>
