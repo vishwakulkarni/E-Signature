@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <style>
+</style>
+</head>
+  <body>
+    <div >
+        <div >
+            <div >
+                <!-- Photos upload Form -->
+                <form id="upload-photos" method="post" action="/upload_photos" enctype="multipart/form-data" >
+                        <label  for="photos-input">Upload your Image: </label>
+                        <input  id ="photos-input" type="file"  name="photos[]" multiple="multiple" />
+                    <input type="hidden" name="csrf_token" value="just_a_text_field" />
+                    <input type="submit" name="Photo Uploads" value="Upload Photos"  />
+                </form>
+                <br/>
+            </div>
+        </div>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script type="text/javascript" src="/assets/js/app.js"></script>
+</body>
+</html>
